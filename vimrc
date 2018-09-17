@@ -12,6 +12,27 @@ let mapleader=";"
 colorscheme molokai
 "colorscheme phd
 
+
+let t:is_transparent = 0
+function! Toggle_transparent()
+    if t:is_transparent == 0
+        hi Normal guibg=NONE ctermbg=NONE
+        let t:is_transparent = 1
+    else
+        set background=dark
+        let t:is_tranparent = 0
+    endif
+endfunction
+nnoremap <C-t> : call Toggle_transparent()<CR>
+
+
+
+
+
+
+
+
+
 " 总是显示状态栏
 set laststatus=2
 " 显示光标当前位置
